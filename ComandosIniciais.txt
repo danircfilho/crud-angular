@@ -1,0 +1,31 @@
+Iniciar projeto Angular
+
+npm i -g @angular/cli (instalar o Angular)
+
+ng new nomedoprojeto --minimal (projeto simples com o mínimo necessário)
+
+***DICAS INICIAIS***
+"@schematics/angular:component": {
+"inlineTemplate": true,   ***trocar para false "inlineTemplate": false,
+"inlineStyle": true,      ***trocar para false  "inlineStyle": false,
+"skipTests": true
+
+***Porque? -> Desta forma os arquivos HTML (inlineTemplate), CSS (inlineStyle) estarão em arquivos separados... Caso contrário ficariam em um único arquivo por padrão por termos uma aplicação mínima (---minimal)...***
+
+*O main.ts aponta e carrega os arquivos iniciais que estão na pasta app
+
+Inicia-se assim: main.ts (pasta src) -> app.module "bootstrap: [app.component]" (pasta app) -> app.
+component
+
+***INSTALAR NOVOS RECURSOS***
+
+ng add @angular/nomedorecurso
+
+No caso do material (ng add @angular/material) virão perguntas...
+1ª Template (escolher - ver na url o exemplo)
+2ª Tipografia (sim ou não)
+3ª Imagens (sim ou não)
+
+***Para gerar componentes***
+ng generate component caminho/algumacoisa (pode ser trocado por g c - generate component)
+ex: ng g c components/template/header
