@@ -29,3 +29,7 @@ No caso do material (ng add @angular/material) virão perguntas...
 ***Para gerar componentes***
 ng generate component caminho/algumacoisa (pode ser trocado por g c - generate component)
 ex: ng g c components/template/header
+
+***Criar Diretivas***
+ng g d directives/red (pasta/diretiva) - diretiva de atributos, como estilos
+ng g d directives/for (pasta/diretiva) - diretiva estrutural, como adicionar elementos na página (DOM) ou componente

@@ -14,6 +14,8 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from './views/home/home.component';
+import { RedDirective } from './directives/red.directive';
+import { ForDirective } from './directives/for.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { HomeComponent } from './views/home/home.component';
     HeaderComponent, 
     FooterComponent, 
     NavComponent, 
-    HomeComponent
+    HomeComponent, RedDirective, ForDirective
   ],
   imports: [
     BrowserModule,
