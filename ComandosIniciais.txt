@@ -33,3 +33,11 @@ ex: ng g c components/template/header
 ***Criar Diretivas***
 ng g d directives/red (pasta/diretiva) - diretiva de atributos, como estilos
 ng g d directives/for (pasta/diretiva) - diretiva estrutural, como adicionar elementos na página (DOM) ou componente
+
+***Bidings***
+biding de evento como um evento de cliques. Usa-se entre parenteses (click)
+
+***Services***
+exemplo: ng g s components/product/product
+Os services estão relacionados com códigos e outros componentes como conexões HTTP; por convenção e não regra, os services devem ser os mais enxutos possíveis e não devem se relacionar com objetivos de apresentar nada em tela
+Não aparecem em app.module nas declarations pois estão reservados componentes e diretivas, caso for necessário expor os services estes devem estar em providers (arquivo app.module)
