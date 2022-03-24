@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { Observable } from "rxjs";
 import { Product } from "./product.model";
 
 @Injectable({
@@ -21,8 +22,22 @@ export class ProductService {
     });
   }
 
-  /* interagir com o backend */
-  create(product: Product) Observable<Product> {
+  /* interagir com o backend - CRUD */
+  create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product)
+  }
+  
+  read(): Observable<Product[]> { /*passado um array de produtos*/
+    return this.http.get<Product[]>(this.baseUrl)
+  }
+  
+  readById(id: string): Observable<Product> { 
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Product>(url)
+  }
+  
+  update(product: Product): Observable<Product> { 
+    const url = `${this.baseUrl}/${product.id}`
+    return this.http.put<Product>(url, product)
   }
 }
