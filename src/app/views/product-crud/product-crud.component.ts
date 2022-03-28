@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/components/template/header/header.service';
 
 @Component({
   selector: 'app-product-crud',
@@ -9,7 +10,16 @@ import { Router } from '@angular/router';
 export class ProductCrudComponent implements OnInit {
   /* no construtor mostro o tipo de objeto que quero injetar no meu componente, neste caso Router */
   /* não basta apenas ter o nome do atributo (router), mais também o tipo, no caso o Router importado */
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private headerService: HeaderService
+    ) {
+    headerService.headerData = {
+      title: 'Cadastro de Produtos',
+      icon: 'storefront',
+      routerUrl: '/products'
+    }
+  }
 
   ngOnInit(): void {
   }
