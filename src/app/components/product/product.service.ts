@@ -8,7 +8,7 @@ import { Product } from "./product.model";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "https://bd-json-angular.herokuapp.com/"
+  baseUrl = "https://json-db-angular.herokuapp.com/"
  /*  "http://localhost:3001/products"; */
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
