@@ -17,7 +17,7 @@
 
 ## Visite este projeto no website:
 
-https://newthoughts.herokuapp.com/
+https://angular-product.netlify.app/
 
 Copyrigth (c) 2022 - Daniel Rodrigues de Carvalho Filho
 
