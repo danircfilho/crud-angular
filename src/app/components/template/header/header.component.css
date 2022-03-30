@@ -10,12 +10,8 @@
   color: #fff;
 }
 
-.header .logo {
-  max-width: 60px;
-}
-
 .header .title-group {
-  padding-left: 30px;
+  padding-left: 200px;
 }
 
 .header .title-group i {

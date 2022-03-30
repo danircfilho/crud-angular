@@ -8,22 +8,20 @@ import { Product } from "./product.model";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "https://json-db-angular.herokuapp.com/products"
- /*  "http://localhost:3001/products"; */
+  baseUrl = "http://localhost:3001/products";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
-    /* o segundo parametro (depois de msg) é a Action, no caso um "fechar" ou "X" para fechar (exemplo) */
     this.snackBar.open(msg, "fechar", {
-      duration: 3000 /* 3 segundos */,
+      duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
   }
 
-  /* interagir com o backend - CRUD */
+  /* interagir com o backend JSON Server - CRUD */
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product).pipe(
       map((obj) => obj),
@@ -32,7 +30,6 @@ export class ProductService {
   }
 
   read(): Observable<Product[]> {
-    /*passado um array de produtos*/
     return this.http.get<Product[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -62,9 +59,8 @@ export class ProductService {
       catchError((e) => this.errorHandler(e))
     );
   }
- 
-  /* O pipe que mapeia o objeto estásendo usado em todas as operações CRUD */
-  /* tratamento de erro, no caso genérico ara todas as operações CRUD */  
+
+  /* Tratamento de erro, genérico para todas as operações CRUD */
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro inesperado!", true);
     return EMPTY;

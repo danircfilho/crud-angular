@@ -1,6 +1,11 @@
 .sidenav {
   background-color: #636060;
-  width: 200px;
+  width: 180px;
+}
+
+.sidenav .logo {
+  max-width: 115px;
+  margin: 0 30px 0 30px;
 }
 
 .sidenav a {

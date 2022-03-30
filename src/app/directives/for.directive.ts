@@ -3,15 +3,13 @@ import {
   Input,
   OnInit,
   TemplateRef,
-  ViewContainerRef,
+  ViewContainerRef
 } from "@angular/core";
 
 @Directive({
   selector: "[myFor]",
 })
 export class ForDirective implements OnInit {
-  /* tudo depois da palavra 'em' será resolvido */
-  /* tudo depois da palavra 'em' será resolvido */
   @Input("myForEm")
   numbers!: number[];
 
@@ -22,7 +20,7 @@ export class ForDirective implements OnInit {
 
   ngOnInit(): void {
     for (let number of this.numbers) {
-      this.container.createEmbeddedView(this.template,{ $implicit: number });
+      this.container.createEmbeddedView(this.template, { $implicit: number });
     }
   }
 }
